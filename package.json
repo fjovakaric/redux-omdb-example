@@ -4,6 +4,7 @@
   "description": "A reactjs-redux example app using omdb API",
   "main": "src/index.js",
   "scripts": {
+    "start": "node_modules/.bin/babel-node src/server.js"
   },
   "repository": {
     "type": "git",
