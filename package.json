@@ -1,0 +1,18 @@
+{
+  "name": "redux-omdb-example",
+  "version": "1.0.0",
+  "description": "A reactjs-redux example app using omdb API",
+  "main": "src/index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fjovakaric/redux-omdb-example.git"
+  },
+  "author": "fjovakaric",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fjovakaric/redux-omdb-example/issues"
+  },
+  "homepage": "https://github.com/fjovakaric/redux-omdb-example#readme"
+}
