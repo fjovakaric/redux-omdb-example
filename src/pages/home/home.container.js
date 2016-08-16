@@ -1,10 +1,16 @@
 import React, { PropTypes } from 'react';
+import { Jumbotron } from 'react-bootstrap';
+
+import './_home.scss'
 
 class HomePage extends React.Component {
     render() {
         return (
             <div className="home-page">
-                <h1> This is the home page </h1>
+                <Jumbotron>
+                    <h1>Welcome!</h1>
+                    <p>This is a reactjs-redux example app using omdb API</p>
+                </Jumbotron>
             </div>
         );
     }
