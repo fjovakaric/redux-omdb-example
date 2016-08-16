@@ -10,6 +10,14 @@
     "url": "git+https://github.com/fjovakaric/redux-omdb-example.git"
   },
   "author": "fjovakaric",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "webpack": "1.13.0",
+    "webpack-dev-middleware": "1.6.1",
+    "webpack-hot-middleware": "2.10.0"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/fjovakaric/redux-omdb-example/issues"
