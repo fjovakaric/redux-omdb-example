@@ -1,6 +1,12 @@
 import actionTypes from './constants';
 
-const initialState = function() {
+const initialState = function(isEmpty) {
+    if (isEmpty) {
+        return {
+            movies: []
+        }
+    }
+
     return {
         movies: [
             {
@@ -35,8 +41,11 @@ const initialState = function() {
     };
 };
 
-export default function moviesReducer(state = initialState(), action) {
+export default function moviesReducer(state = initialState(true), action) {
     switch(action.type) {
+        case actionTypes.GET_MOVIES:
+            return initialState(false);
+
         default:
             return state;
     }
