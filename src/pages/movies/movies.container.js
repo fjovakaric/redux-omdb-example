@@ -1,10 +1,19 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { } from 'react-bootstrap';
+
+import * as actions from '../../redux/actions';
 
 import './_movies.scss'
 
 class MoviesPage extends React.Component {
+    componentDidMount() {
+        const { actions } = this.props;
+
+        actions.getMovies();
+    }
+
     render() {
         const { movies } = this.props;
 
@@ -16,6 +25,7 @@ class MoviesPage extends React.Component {
                 </div>
             )
         });
+
         return (
             <div className="movies-page">
                 <h1>Movies</h1>
@@ -37,6 +47,13 @@ function mapStateToProps(state, ownProps) {
     };
 }
 
+function mapDispatchToProps(dispatch) {
+    return {
+        actions: bindActionCreators(actions, dispatch)
+    };
+}
+
 export default connect(
-    mapStateToProps
+    mapStateToProps,
+    mapDispatchToProps
 )(MoviesPage);
