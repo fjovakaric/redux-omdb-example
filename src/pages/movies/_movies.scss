@@ -1,3 +1,24 @@
 .movies-page {
+  .display-movies {
+    padding: 20px 0;
 
+    .movie-preview {
+      float: left;
+      width: 100px;
+
+      img {
+        width: 100px;
+        height: auto;
+      }
+
+      p {
+        text-align: center;
+        margin-top: 5px;
+      }
+    }
+
+    .movie-preview + .movie-preview {
+      margin-left: 20px;
+    }
+  }
 }
