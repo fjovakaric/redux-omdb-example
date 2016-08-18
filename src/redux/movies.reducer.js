@@ -41,10 +41,12 @@ const initialState = function(isEmpty) {
     };
 };
 
-export default function moviesReducer(state = initialState(true), action) {
+export default function moviesReducer(state = initialState(false), action) {
     switch(action.type) {
-        case actionTypes.GET_MOVIES:
-            return initialState(false);
+        case actionTypes.SEARCH_MOVIES_SUCCESS:
+            return {
+                movies: action.movies
+            };
 
         default:
             return state;
