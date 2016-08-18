@@ -3,18 +3,33 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {} from 'react-bootstrap';
 
-//import * as actions from '../../redux/actions';
+import * as actions from '../../redux/actions';
 
 import './_movie.scss'
 
 // Set container name
 class MoviePage extends React.Component {
+    componentDidMount() {
+        const { activeMovie, routeParams, actions } = this.props;
+
+        if (activeMovie && activeMovie.imdbID != routeParams.id) {
+            actions.clearActiveMovie();
+            actions.getMovie(routeParams.id);
+        }
+
+        if (!activeMovie) {
+            actions.getMovie(routeParams.id);
+        }
+    }
+
     render() {
-        const {} = this.props;
+        const { activeMovie } = this.props;
+
+        const isMovieLoaded = (activeMovie);
 
         return (
             <div className="movie-page">
-                <h1>Movie Page</h1>
+                {isMovieLoaded && <h1>{activeMovie.Title}</h1>}
             </div>
         );
     }
@@ -22,20 +37,20 @@ class MoviePage extends React.Component {
 
 // Set PropTypes
 MoviePage.propTypes = {
-    // props: PropTypes.object,
-    // actions: PropTypes.object
+    activeMovie: PropTypes.object,
+    actions: PropTypes.object
 };
 
 // Set props
 function mapStateToProps(state, ownProps) {
     return {
-        // prop: state.prop
+        activeMovie: state.movies.activeMovie
     };
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        // actions: bindActionCreators(actions, dispatch)
+        actions: bindActionCreators(actions, dispatch)
     };
 }
 
