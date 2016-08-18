@@ -3,11 +3,13 @@ import actionTypes from './constants';
 const initialState = function(isEmpty) {
     if (isEmpty) {
         return {
+            activeMovie: undefined,
             movies: []
         }
     }
 
     return {
+        activeMovie: undefined,
         movies: [
             {
                 Title: "Pirates of the Caribbean: The Curse of the Black Pearl",
@@ -45,7 +47,20 @@ export default function moviesReducer(state = initialState(false), action) {
     switch(action.type) {
         case actionTypes.SEARCH_MOVIES_SUCCESS:
             return {
+                activeMovie: Object.assign({}, state.activeMovie),
                 movies: action.movies
+            };
+
+        case actionTypes.GET_MOVIE_SUCCESS:
+            return {
+                activeMovie: action.movie,
+                movies: Object.assign([], state.movies)
+            };
+
+        case actionTypes.CLEAR_ACTIVE_MOVIE:
+            return {
+                activeMovie: undefined,
+                movies: Object.assign([], state.movies)
             };
 
         default:
