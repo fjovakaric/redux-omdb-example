@@ -2,11 +2,12 @@
 
 .movie-poster {
   width: 120px;
+  height: 170px;
   padding: 10px;
 
   img {
     width: 100px;
-    height: auto;
+    height: 150px;
   }
 
   &:hover {
@@ -16,7 +17,7 @@
 
     img {
       width: 110px;
-      height: auto;
+      height: 160px;
     }
   }
 }
