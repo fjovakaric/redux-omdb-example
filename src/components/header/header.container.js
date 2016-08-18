@@ -11,8 +11,6 @@ class Header extends React.Component {
     render() {
         const { isLoading } = this.props;
 
-        console.log(isLoading);
-
         const spinner = isLoading ? (
             <Nav className="pull-right">
                 <NavItem disabled>

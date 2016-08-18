@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux';
 import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 
 import MoviesList from './components/movies-list/movies-list';
-
 import SearchField from '../../components/search-field/search-field';
 
 import * as actions from '../../redux/actions';
@@ -12,9 +11,6 @@ import * as actions from '../../redux/actions';
 import './_movies.scss'
 
 class MoviesPage extends React.Component {
-    componentDidMount() {
-    }
-
     render() {
         const { movies, actions } = this.props;
 
