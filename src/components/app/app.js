@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 
-import Header from '../header/header';
+import Header from '../header/header.container';
 
 import './_app.scss';
 
