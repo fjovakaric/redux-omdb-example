@@ -5,6 +5,8 @@ import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 
 import MoviesList from './components/movies-list/movies-list';
 
+import SearchField from '../../components/search-field/search-field';
+
 import * as actions from '../../redux/actions';
 
 import './_movies.scss'
@@ -21,6 +23,12 @@ class MoviesPage extends React.Component {
         return (
             <div className="movies-page">
                 <h1>Movies</h1>
+
+                <div className="search-wrapper">
+                    <SearchField
+                        placeholder={'Search movies on OMDb'}/>
+                </div>
+
                 <MoviesList movies={movies}></MoviesList>
             </div>
         );
