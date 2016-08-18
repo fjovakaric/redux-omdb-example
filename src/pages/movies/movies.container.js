@@ -13,12 +13,10 @@ import './_movies.scss'
 
 class MoviesPage extends React.Component {
     componentDidMount() {
-        const { actions } = this.props;
-        actions.getMovies();
     }
 
     render() {
-        const { movies } = this.props;
+        const { movies, actions } = this.props;
 
         return (
             <div className="movies-page">
@@ -26,6 +24,7 @@ class MoviesPage extends React.Component {
 
                 <div className="search-wrapper">
                     <SearchField
+                        searchAction={actions.searchMovies}
                         placeholder={'Search movies on OMDb'}/>
                 </div>
 
