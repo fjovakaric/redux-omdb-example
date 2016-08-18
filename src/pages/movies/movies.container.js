@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { } from 'react-bootstrap';
+import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 
 import * as actions from '../../redux/actions';
 
@@ -17,11 +17,20 @@ class MoviesPage extends React.Component {
     render() {
         const { movies } = this.props;
 
+        let tooltip;
         const moviePosters = movies.map((movie) => {
+            tooltip = (
+                <Tooltip id="tooltip">{movie.Title}</Tooltip>
+            );
             return (
-                <div className="movie-preview" key={movie.imdbID}>
-                    <img src={movie.Poster} alt=""/>
-                    <p>{movie.Title}</p>
+                <div className="movie-preview">
+                    <OverlayTrigger
+                        placement="bottom"
+                        overlay={tooltip}
+                        key={movie.imdbID}>
+
+                        <img src={movie.Poster} alt=""/>
+                    </OverlayTrigger>
                 </div>
             )
         });

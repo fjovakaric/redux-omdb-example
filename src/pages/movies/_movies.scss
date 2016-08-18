@@ -1,24 +1,29 @@
+@import "../../ui-stylesheets/variables";
+
 .movies-page {
   .display-movies {
     padding: 20px 0;
 
     .movie-preview {
       float: left;
-      width: 100px;
+      width: 120px;
+      padding: 10px;
 
       img {
         width: 100px;
         height: auto;
       }
 
-      p {
-        text-align: center;
-        margin-top: 5px;
-      }
-    }
+      &:hover {
+        cursor: pointer;
+        background-color: $primary-color;
+        padding: 5px;
 
-    .movie-preview + .movie-preview {
-      margin-left: 20px;
+        img {
+          width: 110px;
+          height: auto;
+        }
+      }
     }
   }
 }
