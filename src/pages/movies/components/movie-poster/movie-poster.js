@@ -10,6 +10,7 @@ class MoviePoster extends React.Component {
         const { movie } = this.props;
 
         const tooltip = <Tooltip id="tooltip">{movie.Title}</Tooltip>;
+        const poster = movie.Poster != 'N/A' ? movie.Poster : '/images/no-poster.jpeg';
 
         return (
             <div className="movie-poster">
@@ -18,7 +19,7 @@ class MoviePoster extends React.Component {
                     overlay={tooltip}
                     key={movie.imdbID}>
 
-                    <img src={movie.Poster} alt=""/>
+                    <img src={poster} alt=""/>
                 </OverlayTrigger>
             </div>
         );
