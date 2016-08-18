@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {} from 'react-bootstrap';
 
+import MoviePreview from './components/movie-preview/movie-preview';
+
 import * as actions from '../../redux/actions';
 
 import './_movie.scss'
@@ -29,7 +31,7 @@ class MoviePage extends React.Component {
 
         return (
             <div className="movie-page">
-                {isMovieLoaded && <h1>{activeMovie.Title}</h1>}
+                {isMovieLoaded && <MoviePreview movie={activeMovie} />}
             </div>
         );
     }
