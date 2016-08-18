@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
 import { OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Link } from 'react-router';
 
 import './_movie-poster.scss';
 
@@ -13,7 +14,7 @@ class MoviePoster extends React.Component {
         const poster = movie.Poster != 'N/A' ? movie.Poster : '/images/no-poster.jpeg';
 
         return (
-            <div className="movie-poster">
+            <Link className="movie-poster" to={'/movie/' + movie.imdbID}>
                 <OverlayTrigger
                     placement="bottom"
                     overlay={tooltip}
@@ -21,7 +22,7 @@ class MoviePoster extends React.Component {
 
                     <img src={poster} alt=""/>
                 </OverlayTrigger>
-            </div>
+            </Link>
         );
     }
 }
