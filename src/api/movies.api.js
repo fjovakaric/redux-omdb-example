@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const omdbUrl = 'http://www.omdbapi.com';
 
-export function search(movieName) {
+export function search(name) {
     const movieName = name.toLowerCase();
     return axios.get(omdbUrl, {
         params: {
