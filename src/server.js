@@ -8,7 +8,7 @@ const app = express();
 
 const compiler = webpack(config);
 
-// app.use(express.static(__dirname + '/../assets'));
+app.use(express.static(__dirname + '/../assets'));
 
 app.use(require('webpack-dev-middleware')(compiler, {
     noInfo: true,
