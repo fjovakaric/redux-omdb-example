@@ -23,6 +23,33 @@ export function searchMoviesSuccess(movies) {
     }
 }
 
+export function getMovie(imdbID) {
+    return (dispatch) => {
+        dispatch(beginAjaxCall());
+        moviesApi
+            .get(imdbID)
+            .then((result) => {
+                dispatch(getMovieSuccess(result.data));
+            })
+            .catch((err) => {
+                dispatch(ajaxCallError(err));
+            });
+    }
+}
+
+export function getMovieSuccess(movie) {
+    return {
+        type: actionTypes.GET_MOVIE_SUCCESS,
+        movie
+    }
+}
+
+export function clearActiveMovie() {
+    return {
+        type: actionTypes.CLEAR_ACTIVE_MOVIE
+    }
+}
+
 export function beginAjaxCall() {
     return {
         type: actionTypes.BEGIN_AJAX_CALL
