@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 
+import MoviesList from './components/movies-list/movies-list';
+
 import * as actions from '../../redux/actions';
 
 import './_movies.scss'
@@ -10,37 +12,16 @@ import './_movies.scss'
 class MoviesPage extends React.Component {
     componentDidMount() {
         const { actions } = this.props;
-
         actions.getMovies();
     }
 
     render() {
         const { movies } = this.props;
 
-        let tooltip;
-        const moviePosters = movies.map((movie) => {
-            tooltip = (
-                <Tooltip id="tooltip">{movie.Title}</Tooltip>
-            );
-            return (
-                <div className="movie-preview">
-                    <OverlayTrigger
-                        placement="bottom"
-                        overlay={tooltip}
-                        key={movie.imdbID}>
-
-                        <img src={movie.Poster} alt=""/>
-                    </OverlayTrigger>
-                </div>
-            )
-        });
-
         return (
             <div className="movies-page">
                 <h1>Movies</h1>
-                <div className="display-movies">
-                    {moviePosters}
-                </div>
+                <MoviesList movies={movies}></MoviesList>
             </div>
         );
     }
