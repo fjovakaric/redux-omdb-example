@@ -1,0 +1,19 @@
+.movie-preview {
+
+  .upper {
+    overflow: auto;
+    margin-bottom: 20px;
+
+    .poster {
+      width: 200px;
+      height: 300px;
+      margin-right: 20px;
+      margin-top: 20px;
+    }
+
+    .imdb-logo {
+      height: 20px;
+      width: auto;
+    }
+  }
+}
