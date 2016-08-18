@@ -1,7 +1,14 @@
 import actionTypes from './constants';
 
-export function getMovies() {
+export function beginAjaxCall() {
     return {
-        type: actionTypes.GET_MOVIES
-    }
+        type: actionTypes.BEGIN_AJAX_CALL
+    };
+}
+
+export function ajaxCallError(error) {
+    return {
+        type: actionTypes.AJAX_CALL_ERROR,
+        error
+    };
 }

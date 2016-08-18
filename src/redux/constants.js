@@ -1,3 +1,4 @@
 export default {
-    GET_MOVIES: 'GET_MOVIES'
+    BEGIN_AJAX_CALL: 'BEGIN_AJAX_CALL',
+    AJAX_CALL_ERROR: 'AJAX_CALL_ERROR'
 };
