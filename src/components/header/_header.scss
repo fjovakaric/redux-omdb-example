@@ -1,5 +1,15 @@
-.header {
+@import '../../ui-stylesheets/variables';
+
+.header.navbar.navbar-default {
   margin: 0 -30px;
   border-radius: 0;
   border: none;
+
+  background-color: $secondary-color;
+  border-radius: 0;
+  border: none;
+
+  a {
+    color: white;
+  }
 }
